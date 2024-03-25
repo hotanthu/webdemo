@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Webdemo</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .profile-img {
+          max-width: 50%;
+          height: 50%;
+          border-radius: 50%; /* Để làm cho hình tròn */
+          display: block; /* Hiển thị hình ảnh ở giữa */
+          margin: 50px auto; /* Canh giữa theo chiều ngang */
+        }
+      </style>
+      
+    </head>
+    <body>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-3">Website demo</h1>
+            <p class="lead">Từng bước thực hiện website</p>
+            <hr class="my-2">
+            <nav class="navbar navbar-expand-sm navbar-light bg-light">
+                <a class="navbar-brand" href="#">Logo</a>
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Quản lý thành viên</a>
+                        </li>
+                        
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+      </div>
+    <div class="container">
+        <div class="row">
+        <!-- Cột bên trái -->
+        <div class="col-md-4">
+            <img src="https://scontent.fsgn5-9.fna.fbcdn.net/v/t39.30808-6/236750408_2977951539117274_398639779791776582_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHJmzqKtXxPO9lNbVhWV4iInyQ3NNxts7GfJDc03G2zscUNks7Kbpj4RPmqYQerdVT2udDq-ugLHZsvYodXEF3f&_nc_ohc=zQwAGT28L1EAX-ppx5L&_nc_ht=scontent.fsgn5-9.fna&oh=00_AfDzlclXxuL0znxiFRvg6IpdKQY86QaSTuvxB1FQeSokyg&oe=66069E38" alt="Hình ảnh" class="profile-img">
+        </div>
+        <!-- Cột bên phải -->
+        <div class="col-md-8">
+            <!-- Thông tin -->
+            <p><b>Họ tên:</b> Hồ Tấn Thứ</p>
+            <p><b>Lớp:</b> DT21TT887</p>
+            <p><b>MSSV:</b> 170121609</p>
+            <p><b>Email:</b> hotanthu0914@gmail.com</p>
+            <p><b>Địa chỉ:</b> Phường 1, TP Bạc Liêu, Bạc Liêu.</p>
+            <p><b>Công việc:</b> Bộ đội</p>
+            <p><b>Sở thích:</b> Du lịch, nghe nhạc</p>
+        </div>
+        </div>
+    </div>
+      <div class="container-fluid">
+        <div class="card-columns">
+            <div class="card">
+                <img class="card-img-top" src="holder.js/100x180/" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Form đăng ký</h4>
+                    <form action="" method="post" name="dk">
+                        <div class="form-group">
+                          <label for="us">Username</label>
+                          <input type="text"
+                            class="form-control" name="txtusername" id="txtusername" aria-describedby="helpId" placeholder="Nhập Username">
+                          
+                        </div>
+                        <div class="form-group">
+                          <label for="ps">Password</label>
+                          <input type="password"
+                            class="form-control" name="txtpassword" id="txtpassword" aria-describedby="helpId" placeholder="Nhập mật khẩu">
+                          
+                        </div>
+                        <div class="form-group">
+                            <label for="rps">RePassword</label>
+                            <input type="password"
+                              class="form-control" name="txtrepassword" id="txtrepassword" aria-describedby="helpId" placeholder="Nhập lại mật khẩu">
+                          
+                          </div>
+                          <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text"
+                              class="form-control" name="txtemail" id="txtemail" aria-describedby="helpId" placeholder="Nhập vào email">
+                            
+                          </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="holder.js/100x180/" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Danh sách thành viên</h4>
+                    <p class="card-text">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row">1</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">2</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
