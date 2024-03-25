@@ -12,9 +12,9 @@
         .profile-img {
           max-width: 50%;
           height: 50%;
-          border-radius: 50%; /* Để làm cho hình tròn */
-          display: block; /* Hiển thị hình ảnh ở giữa */
-          margin: 50px auto; /* Canh giữa theo chiều ngang */
+          border-radius: 50%; 
+          display: block; 
+          margin: 50px auto; 
         }
       </style>
       
@@ -54,13 +54,13 @@
       </div>
     <div class="container">
         <div class="row">
-        <!-- Cột bên trái -->
+       
         <div class="col-md-4">
             <img src="https://scontent.fsgn5-9.fna.fbcdn.net/v/t39.30808-6/236750408_2977951539117274_398639779791776582_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHJmzqKtXxPO9lNbVhWV4iInyQ3NNxts7GfJDc03G2zscUNks7Kbpj4RPmqYQerdVT2udDq-ugLHZsvYodXEF3f&_nc_ohc=zQwAGT28L1EAX-ppx5L&_nc_ht=scontent.fsgn5-9.fna&oh=00_AfDzlclXxuL0znxiFRvg6IpdKQY86QaSTuvxB1FQeSokyg&oe=66069E38" alt="Hình ảnh" class="profile-img">
         </div>
-        <!-- Cột bên phải -->
+        
         <div class="col-md-8">
-            <!-- Thông tin -->
+    
             <p><b>Họ tên:</b> Hồ Tấn Thứ</p>
             <p><b>Lớp:</b> DT21TT887</p>
             <p><b>MSSV:</b> 170121609</p>
@@ -69,7 +69,7 @@
             <p><b>Công việc:</b> Bộ đội</p>
             <p><b>Sở thích:</b> Du lịch, nghe nhạc</p>
         </div>
-        </div>
+    </div>
     </div>
       <div class="container-fluid">
         <div class="card-columns">
@@ -77,31 +77,31 @@
                 <img class="card-img-top" src="holder.js/100x180/" alt="">
                 <div class="card-body">
                     <h4 class="card-title">Form đăng ký</h4>
-                    <form action="" method="post" name="dk">
+                    <form action="" method="post" name="dk" onsubmit="return validateForm()">
                         <div class="form-group">
                           <label for="us">Username</label>
                           <input type="text"
-                            class="form-control" name="txtusername" id="txtusername" aria-describedby="helpId" placeholder="Nhập Username">
+                            class="form-control" name="txtusername" id="txtusername" aria-describedby="helpId" placeholder="Nhập Username" required>
                           
                         </div>
                         <div class="form-group">
                           <label for="ps">Password</label>
                           <input type="password"
-                            class="form-control" name="txtpassword" id="txtpassword" aria-describedby="helpId" placeholder="Nhập mật khẩu">
+                            class="form-control" name="txtpassword" id="txtpassword" aria-describedby="helpId" placeholder="Nhập mật khẩu" required>
                           
                         </div>
                         <div class="form-group">
                             <label for="rps">RePassword</label>
                             <input type="password"
-                              class="form-control" name="txtrepassword" id="txtrepassword" aria-describedby="helpId" placeholder="Nhập lại mật khẩu">
+                              class="form-control" name="txtrepassword" id="txtrepassword" aria-describedby="helpId" placeholder="Nhập lại mật khẩu" required>
                           
                           </div>
                           <div class="form-group">
                             <label for="email">Email</label>
                             <input type="text"
-                              class="form-control" name="txtemail" id="txtemail" aria-describedby="helpId" placeholder="Nhập vào email">
-                            
+                              class="form-control" name="txtemail" id="txtemail" aria-describedby="helpId" placeholder="Nhập vào email" required>
                           </div>
+                          <button type="submit" class="btn btn-primary">Đăng ký</button>
                     </form>
                 </div>
             </div>
@@ -110,25 +110,17 @@
                 <div class="card-body">
                     <h4 class="card-title">Danh sách thành viên</h4>
                     <p class="card-text">
-                        <table class="table">
+                        <table id="danh-sach-thanh-vien" class="table">
                             <thead>
                                 <tr>
                                     <th>STT</th>
                                     <th>Username</th>
                                     <th>Email</th>
+                                    <th>Xóa</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td scope="row">1</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td scope="row">2</td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
+                                <!-- Dữ liệu sẽ được thêm vào đây -->
                             </tbody>
                         </table>
 
@@ -138,6 +130,54 @@
         </div>
       </div>
 
+      <script>
+        function validateForm() {
+            var password = document.getElementById("txtpassword").value;
+            var confirmPassword = document.getElementById("txtrepassword").value;
+            if (password != confirmPassword) {
+                alert("Mật khẩu không khớp!");
+                return false;
+            }
+            var username = document.getElementById("txtusername").value;
+            var email = document.getElementById("txtemail").value;
+    
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Vui lòng nhập địa chỉ email hợp lệ!");
+                return false;
+            }
+    
+            var table = document.getElementById("danh-sach-thanh-vien").getElementsByTagName('tbody')[0];
+    
+            var newRow = table.insertRow();
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3); // Ô cột mới cho nút xóa
+            
+            cell1.innerHTML = table.rows.length; 
+            cell2.innerHTML = username;
+            cell3.innerHTML = email;
+            cell4.innerHTML = '<button onclick="xoaDong(this)">Xóa</button>';
+    
+            document.getElementById("txtusername").value = "";
+            document.getElementById("txtemail").value = "";
+            document.getElementById("txtpassword").value = "";
+            document.getElementById("txtrepassword").value = "";
+    
+            alert("Thêm dữ liệu thành công!");
+    
+            return false; // Ngăn form submit để không load lại trang
+        }
+    
+        function xoaDong(button) {
+            var row = button.parentNode.parentNode; // Dòng chứa nút xóa
+            var table = row.parentNode; // Bảng chứa dòng
+    
+            table.deleteRow(row.rowIndex); // Xóa dòng từ bảng
+        }
+    </script>
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
